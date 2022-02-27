@@ -1,0 +1,423 @@
+:root {
+	--twitter-blue: #1fa2f1;
+	--buttonHoverBg: #d4edff;
+	--lightGrey: rgba(230, 236, 240);
+	--Spacing: 15px;
+	--greyText: rgb(101, 119, 134);
+	--greyButtonText: rgba(0, 0, 0, 0.34);
+	/* ! Added from Github */
+	--red: rgb(226, 34, 94);
+	--redBackground: rgba(226, 34, 94, 0.1);
+	--green: rgb(23, 191, 99);
+	--greenBackground: rgba(23, 191, 99, 0.1);
+}
+
+nav {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	align-items: center;
+}
+nav a {
+	display: block;
+	padding: 10px;
+	font-size: 30px;
+	width: 55px;
+	height: 55px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	color: #333;
+}
+
+nav .logo {
+	color: var(--twitter-blue);
+}
+
+nav a:hover {
+	background-color: var(--buttonHoverBg);
+	border-radius: 50%;
+}
+
+.main-container {
+	border-left: 1px solid var(--lightGrey);
+	border-right: 1px solid var(--lightGrey);
+	display: flex;
+	flex-direction: column;
+}
+
+.titleContainer {
+	height: 53px;
+	padding: 0 var(--Spacing);
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid var(--lightGrey);
+	flex-shrink: 0;
+}
+.titleContainer h1 {
+	flex: 1;
+}
+h1 {
+	font-size: 19px;
+	font-weight: 800;
+	margin: 0;
+}
+
+.postContainer {
+	display: flex;
+	padding: var(--Spacing);
+	border-bottom: 7px solid rgb(230, 236, 240);
+	flex-shrink: 0;
+}
+
+.userImageContainer {
+	height: 50px;
+	width: 50px;
+}
+.userImageContainer img {
+	width: 100%;
+	border-radius: 50%;
+	background-color: white;
+}
+.textareaContainer {
+	flex: 1;
+	padding-left: var(--Spacing);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+.textareaContainer textarea {
+	width: 100%;
+	border: none;
+	resize: none;
+	font-size: 19px;
+}
+textarea:focus {
+	outline: none;
+}
+#submitPostButton {
+	width: 100px;
+	background-color: var(--twitter-blue);
+	color: white;
+	border: none;
+	border-radius: 40px;
+	padding: 7px 15px;
+}
+
+.post {
+	display: flex;
+	flex-direction: column;
+	padding: var(--Spacing);
+	cursor: pointer;
+	border-bottom: 1px solid var(--lightGrey);
+	flex-shrink: 0;
+}
+
+.mainContentContainer {
+	flex: 1;
+	display: flex;
+}
+
+.postContentContainer {
+	padding-left: var(--Spacing);
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.username,
+.date {
+	color: var(--greyText);
+}
+
+.postFooter {
+	display: flex;
+	align-items: center;
+}
+
+.postFooter .postButtonContainer {
+	flex: 1;
+	display: flex;
+}
+
+.postFooter .postButtonContainer button {
+	padding: 2px 5px;
+}
+
+.header a:hover {
+	text-decoration: underline;
+}
+
+.header a,
+.header span {
+	padding-right: 5px;
+}
+
+.postButtonContainer button {
+	border: none;
+	background-color: white;
+}
+.postButtonContainer button:hover {
+	background-color: #d4edff;
+	color: var(--twitter-blue);
+	border-radius: 10px;
+	border: none;
+	text-shadow: 1px 1px 1px var(--twitter-blue);
+}
+.postButtonContainer.red button:hover {
+	background-color: var(--redBackground);
+	color: var(--red);
+	border-radius: 10px;
+	border: none;
+	text-shadow: 1px 1px 1px var(--red);
+}
+.postButtonContainer.green button:hover {
+	background-color: var(--greenBackground);
+	color: var(--green);
+	border-radius: 10px;
+	border: none;
+	text-shadow: 1px 1px 1px var(--green);
+}
+.modal .postContainer {
+	border: none;
+	padding: 0;
+	padding-top: var(--Spacing);
+}
+
+.postButtonContainer button .showDetail {
+	visibility: hidden;
+	margin: 10px;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	color: var(--twitter-blue);
+
+	/* Position the tooltip */
+	position: relative;
+	z-index: 1;
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+.postButtonContainer button:hover .showDetail {
+	visibility: visible;
+	opacity: 1;
+}
+
+/* ! Added from Github */
+.postActionContainer {
+	padding-left: 35px;
+	font-size: 13px;
+	color: var(--greyText);
+	margin-bottom: 5px;
+}
+
+.replyFlag {
+	margin-bottom: 5px;
+	margin-top: var(--Spacing);
+}
+
+.replyFlag a {
+	color: var(--twitter-blue);
+}
+
+.replyTweetContainer {
+	padding: 5px;
+	border: 1px solid darkgrey;
+	border-radius: 10px;
+	margin-top: 5px;
+}
+
+.post.largeFont .postBody,
+.post.largeFont .postFooter {
+	font-size: 23px;
+}
+/* 
+  .postContentContainer .header {
+	display: flex;
+  }
+  .postContentContainer .header .date {
+	flex: 1;
+  } */
+
+.errorMessage {
+	padding: var(--Spacing);
+}
+
+.coverPhotoContainer {
+	height: 180px;
+	background-color: var(--twitter-blue);
+	position: relative;
+}
+
+.profileHeaderContainer .userImageContainer {
+	width: 132px;
+	height: 132px;
+	margin-left: var(--Spacing);
+	position: absolute;
+	top: 150px;
+}
+
+.profileHeaderContainer .userImageContainer img {
+	border: 4px solid #fff;
+}
+
+.profileHeaderContainer .profileButtonsContainer {
+	text-align: right;
+	padding: var(--Spacing);
+	min-height: 66px;
+}
+
+.profileButton,
+.followButton {
+	border: 1px solid var(--twitter-blue);
+	color: var(--twitter-blue);
+	font-weight: bold;
+	padding: 5px 15px;
+	border-radius: 60px;
+	display: inline-block;
+	margin-left: var(--SSpacingpacing);
+}
+
+.profileButton:hover,
+.followButton:hover {
+	background-color: var(--twitter-blueBackground);
+}
+
+.followButton.following {
+	background-color: var(--twitter-blue);
+	color: #fff;
+}
+
+.profileHeaderContainer .userDetailsContainer {
+	display: flex;
+	flex-direction: column;
+	padding: 0 var(--Spacing);
+}
+
+.followersContainer .value {
+	font-weight: bold;
+	margin-right: 5px;
+}
+
+.followersContainer span:not(.value) {
+	color: var(--greyText);
+}
+
+.followersContainer a {
+	margin-right: 15px;
+}
+
+.followersContainer a:hover {
+	border-bottom: 1px solid var(--twitter-blue);
+}
+
+.tabsContainer {
+	display: flex;
+	border-bottom: 1px solid var(--lightGrey);
+	flex-shrink: 0;
+}
+
+.tab {
+	flex: 1;
+	height: 52px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--greyText);
+	font-weight: bold;
+}
+
+.tab.active {
+	color: var(--twitter-blue);
+	border-bottom: 2px solid var(--twitter-blue);
+}
+
+.tab:hover {
+	color: var(--twitter-blue);
+	background-color: var(--twitter-blueBackground);
+}
+
+#msg-text:focus {
+	outline: none;
+}
+
+#send-msg-btn {
+	border: none;
+	background: none;
+	background-color: var(--twitter-blue);
+	color: var(--lightGrey);
+	padding: 5px 10px;
+	border-radius: 20px;
+}
+
+#all-msg-container {
+	margin-top: 10px;
+	border-top: 5px solid var(--lightGrey);
+	list-style: none;
+}
+
+#all-msg-container > div {
+	padding-top: 10px;
+	width: 70%;
+}
+
+#all-msg-container p {
+	margin: 0;
+	padding: 10px 5px;
+	border-radius: 15px;
+	padding: 10px;
+}
+
+#all-msg-container div span {
+	display: block;
+	font-size: 0.8rem;
+}
+#all-msg-container div {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+#all-msg-container div span:first-of-type {
+	font-weight: 700;
+}
+
+.othermessage p {
+	background-color: var(--buttonHoverBg);
+}
+
+.mymessage{
+	float: right;
+}
+
+.mymessage p {
+	background-color: rgb(232, 255, 232);
+	text-align:right;
+}
+.mymessage div span {
+	text-align: right;
+}
+a {
+	text-decoration: none;
+}
+
+
+/* News API  styling */
+.newsContainer{
+	padding: 10px;
+}
+.newsContainer div img{
+	height: 100px;
+} 
+.newsContainer div div a{
+	font-size: 5px;
+} 
+.newsContainer div div h5{
+	font-size: 8px;
+	font-weight: bold;
+} 
+.newsContainer div div p{
+	font-size: 7px;
+}
